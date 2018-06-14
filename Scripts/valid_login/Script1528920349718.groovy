@@ -35,13 +35,64 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl(GlobalVariable.url_login_page)
 
+WebDriver driver = DriverFactory.getWebDriver()
+
+Capabilities cap = ((driver) as RemoteWebDriver).getCapabilities()
+
+String browserName = cap.getBrowserName()
+
+
 WebUI.setText(findTestObject('Page_Log in - LEXolution.IdentitySe/input_UserName'), GlobalVariable.login_user)
 
 WebUI.setText(findTestObject('Page_Log in - LEXolution.IdentitySe/input_Password'), GlobalVariable.login_password)
 
-not_run: WebUI.click(findTestObject('Page_Log in - LEXolution.IdentitySe/input_RememberMe'))
+WebUI.click(findTestObject('Page_Log in - LEXolution.IdentitySe/label_Remember me'))
 
 WebUI.click(findTestObject('Page_Log in - LEXolution.IdentitySe/button_Log in'))
 
-WebUI.closeBrowser()
+WebUI.delay(2)
+
+// store the current session
+Set<Cookie> cookies1 = driver.manage().getCookies()
+
+System.out.println('Coockies = ' + cookies1)
+
+driver.close()
+
+WebDriver driver2
+
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl(GlobalVariable.url_landing_page)
+
+driver2 = DriverFactory.getWebDriver()
+
+if (browserName == 'firefox') {
+    System.setProperty('webdriver.gecko.driver', 'c:\\browser_driver\\geckodriver.exe')
+
+    driver2 = new FirefoxDriver()
+
+    driver2.get(GlobalVariable.url_login_page)
+} else {
+    WebUI.openBrowser('')
+
+    WebUI.navigateToUrl('http://demo.guru99.com')
+
+    driver2 = DriverFactory.getWebDriver()
+}
+
+// add the stored session in the bew web driver instance
+for (Cookie cookie : cookies1) {
+    driver2.manage().addCookie(cookie)
+}
+
+// re-visit the page, login information should be placed
+driver2.get(GlobalVariable.url_login_page)
+
+// get the current session of new web driver instance
+Set<Cookie> cookiesInstance2 = driver2.manage().getCookies()
+
+System.out.println('Coockies = ' + cookiesInstance2)
+
+not_run: WebUI.closeBrowser()
 
