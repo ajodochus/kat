@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>default</name>
+   <tag></tag>
+   <defaultProfile>true</defaultProfile>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://lexolutionidentity.azurewebsites.de/account/login'</initValue>
+      <name>url_login_page</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://lexolutionidentity.azurewebsites.de/'</initValue>
+      <name>url_landing_page</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'bernd'</initValue>
+      <name>login_user</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'432!rewQ'</initValue>
+      <name>login_password</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>
