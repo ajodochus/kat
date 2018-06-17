@@ -4,7 +4,7 @@
    <name>testsuite_login</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-06-17T15:29:59</lastRun>
+   <lastRun>2018-06-17T16:34:52</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>

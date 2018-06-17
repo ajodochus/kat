@@ -41,18 +41,19 @@ Capabilities cap = ((driver) as RemoteWebDriver).getCapabilities()
 
 String browserName = cap.getBrowserName()
 
+// UI Elements
+
+
+// UI Elements
+
 driver.findElement(By.id('UserName')).sendKeys('bernd')
-//WebUI.setText(findTestObject('Object Repository/Page_Log in - LEXolution.IdentitySe/input_UserName','bernd'))
 
 driver.findElement(By.id('Password')).sendKeys('432!rewQ')
-//WebUI.setText(findTestObject('Object Repository/Page_Log in - LEXolution.IdentitySe/input_Password', '432!rewQ'))
 
 driver.findElement(By.id('RememberMe')).click()
-WebUI.check(findTestObject('Object Repository/Page_Log in - LEXolution.IdentitySe/label_Remember me'))
-
 
 driver.findElement(By.xpath('//button[@class=\'btn btn-default\']')).click()
-//WebUI.click(findTestObject('. Repository/Page_Log in - LEXolution.IdentitySe/button_Log in'))
+
 WebUI.delay(2)
 
 // store the current session
@@ -95,4 +96,6 @@ System.out.println('Coockies = ' + cookiesInstance2)
 
 // notice that session of previous web driver instanse is achieved
 Assert.assertEquals(cookies1, cookiesInstance2)
+
+driver2.close()
 
