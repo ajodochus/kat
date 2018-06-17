@@ -4,6 +4,12 @@
    <name>input_UserName</name>
    <tag></tag>
    <elementGuidId>539f6378-7418-4f95-8e8c-c490aa8f85e5</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>id(&quot;UserName&quot;)[count(. | //input[@id = 'UserName' and @name = 'UserName' and @type = 'text']) = count(//input[@id = 'UserName' and @name = 'UserName' and @type = 'text'])]</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -56,7 +62,7 @@
       <value>text</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>

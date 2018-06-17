@@ -4,6 +4,12 @@
    <name>input_Password</name>
    <tag></tag>
    <elementGuidId>478dab79-0e5d-4af4-ae47-61a06c026d02</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>id(&quot;Password&quot;)[count(. | //input[@id = 'Password' and @name = 'Password' and @type = 'password']) = count(//input[@id = 'Password' and @name = 'Password' and @type = 'password'])]</value>
+      </entry>
+   </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -56,7 +62,7 @@
       <value>password</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>

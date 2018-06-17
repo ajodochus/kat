@@ -4,7 +4,7 @@
    <name>testguru</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-06-15T22:09:44</lastRun>
+   <lastRun>2018-06-17T14:49:46</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>

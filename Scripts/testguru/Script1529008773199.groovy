@@ -33,7 +33,7 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('http://demo.guru99.com/selenium/cookie/selenium_aut.php')
+WebUI.navigateToUrl('https://lexolutionidentity.azurewebsites.de/Account/Login')
 
 WebDriver driver = DriverFactory.getWebDriver()
 
@@ -41,13 +41,18 @@ Capabilities cap = ((driver) as RemoteWebDriver).getCapabilities()
 
 String browserName = cap.getBrowserName()
 
-//driver.findElement(By.name('username')).sendKeys('abc123')
-WebUI.setText(findTestObject('Object Repository/Page_Guru99 Selenium Cookie/input_username'), "abc123")
+driver.findElement(By.id('UserName')).sendKeys('bernd')
+//WebUI.setText(findTestObject('Object Repository/Page_Log in - LEXolution.IdentitySe/input_UserName','bernd'))
 
-driver.findElement(By.name('password')).sendKeys('123xyz')
+driver.findElement(By.id('Password')).sendKeys('432!rewQ')
+//WebUI.setText(findTestObject('Object Repository/Page_Log in - LEXolution.IdentitySe/input_Password', '432!rewQ'))
 
-driver.findElement(By.name('submit')).click()
+driver.findElement(By.id('RememberMe')).click()
+WebUI.check(findTestObject('Object Repository/Page_Log in - LEXolution.IdentitySe/label_Remember me'))
 
+
+driver.findElement(By.xpath('//button[@class=\'btn btn-default\']')).click()
+//WebUI.click(findTestObject('. Repository/Page_Log in - LEXolution.IdentitySe/button_Log in'))
 WebUI.delay(2)
 
 // store the current session
@@ -66,11 +71,11 @@ if (browserName == 'firefox') {
 
     driver2 = new FirefoxDriver()
 
-    driver2.get('http://demo.guru99.com')
+    driver2.get('https://lexolutionidentity.azurewebsites.de')
 } else {
     WebUI.openBrowser('')
 
-    WebUI.navigateToUrl('http://demo.guru99.com')
+    WebUI.navigateToUrl('https://lexolutionidentity.azurewebsites.de')
 
     driver2 = DriverFactory.getWebDriver()
 }
@@ -81,7 +86,7 @@ for (Cookie cookie : cookies1) {
 }
 
 // re-visit the page, login information should be placed
-driver2.get('http://demo.guru99.com/selenium/cookie/selenium_aut.php')
+driver2.get('https://lexolutionidentity.azurewebsites.de/Account/Login')
 
 // get the current session of new web driver instance
 Set<Cookie> cookiesInstance2 = driver2.manage().getCookies()
@@ -90,14 +95,4 @@ System.out.println('Coockies = ' + cookiesInstance2)
 
 // notice that session of previous web driver instanse is achieved
 Assert.assertEquals(cookies1, cookiesInstance2)
-
-WebUI.openBrowser('')
-
-WebUI.setText(findTestObject('Page_Guru99 Selenium Cookie/input_username'), 'abc123')
-
-WebUI.setText(findTestObject('Page_Guru99 Selenium Cookie/input_password'), '123xyz')
-
-WebUI.click(findTestObject('Page_Guru99 Selenium Cookie/button_Login'))
-
-WebUI.closeBrowser()
 
