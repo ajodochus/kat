@@ -30,6 +30,7 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.Capabilities as Capabilities
 import org.openqa.selenium.remote.RemoteWebDriver as RemoteWebDriver
 import org.openqa.selenium.Keys as Keys
+import java.util.concurrent.TimeUnit
 
 WebUI.openBrowser('')
 
@@ -96,6 +97,12 @@ System.out.println('Coockies = ' + cookiesInstance2)
 
 // notice that session of previous web driver instanse is achieved
 Assert.assertEquals(cookies1, cookiesInstance2)
+//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS)
+driver2.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS)
 
+
+String user = driver2.findElement(By.xpath('//form[@id=\'logoutForm\']//span[1]')).getText()
+System.out.println('######' + user + '########')
+//Assert.assertEquals(user, 'bernd')
 driver2.close()
 
