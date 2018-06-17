@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>login</name>
+   <name>testsuite_login</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-06-14T22:30:50</lastRun>
+   <lastRun>2018-06-17T15:29:59</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
-   <testSuiteGuid>f2188cee-8edf-4478-8f4e-8313dcc934e6</testSuiteGuid>
+   <testSuiteGuid>f3fdaf2a-6050-446a-a370-d379507c3c83</testSuiteGuid>
    <testCaseLink>
-      <guid>55819414-17ba-441c-8500-9e02e1a3e7dd</guid>
+      <guid>b09fc04e-4569-4d25-8260-67b03c44882a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/valid_login</testCaseId>
+      <testCaseId>Test Cases/tc_remember_user_after_closing_browser</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
