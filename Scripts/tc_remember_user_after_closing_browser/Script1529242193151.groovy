@@ -102,7 +102,7 @@ driver2.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS)
 
 
 String user = driver2.findElement(By.xpath('//form[@id=\'logoutForm\']//span[1]')).getText()
-System.out.println('######' + user + '########')
-//Assert.assertEquals(user, 'bernd')
+System.out.println('######'  + user + '########')
+Assert.assertEquals(user, 'bernd')
 driver2.close()
 
